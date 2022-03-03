@@ -36,13 +36,13 @@ Next, go to **Settings > API > Content management tokens** and create a new toke
 
 With the space ID and management access token at hand run the following command:
 
-```
+```sh
 npx cross-env CONTENTFUL_SPACE_ID=YOUR_SPACE_ID CONTENTFUL_MANAGEMENT_TOKEN=XXX npm run setup
 ```
 
 This command will create the needed content structures and set up your Contentful space ready to use. The output should look as follows:
 
-```
+```sh
 > node ./contentful/setup.js $CONTENTFUL_SPACE_ID $CONTENTFUL_MANAGEMENT_TOKEN
 
 ┌──────────────────────────────────────────────────┐
@@ -108,7 +108,7 @@ Save the content type and continue.
 
 After setting up the content model (either manually or by running `npm run setup` or `yarn setup`), it should look as follows.
 
-**Content model overview**
+#### Content model overview
 
 ![Content model overview](./docs/content-model-overview.png)
 
@@ -177,7 +177,7 @@ In your Contentful space, go to **Settings > Content preview** and add a new con
 
 The **Name** field may be anything, like `Development`. Then, under **Content preview URLs**, check **Post** and set its value to:
 
-```
+```sh
 http://localhost:3000/api/preview?secret=<CONTENTFUL_PREVIEW_SECRET>&slug={entry.fields.slug}
 ```
 
